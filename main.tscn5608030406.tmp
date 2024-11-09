@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://by41v10qinjbd"]
+
+[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_5prrw"]
+[ext_resource type="PackedScene" uid="uid://gqs5jg2v0fin" path="res://chaser.tscn" id="2_v6yfu"]
+[ext_resource type="PackedScene" uid="uid://tqm1n84yro7x" path="res://ghost.tscn" id="4_eqkax"]
+[ext_resource type="Script" path="res://spawner.gd" id="6_0pew6"]
+
+[node name="main" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_5prrw")]
+
+[node name="chaser" parent="." instance=ExtResource("2_v6yfu")]
+position = Vector2(952, 371)
+life = null
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="spawner" type="Node2D" parent="."]
+script = ExtResource("6_0pew6")
+
+[node name="ghost" parent="spawner" instance=ExtResource("4_eqkax")]
+position = Vector2(16, 192)
+
+[node name="ghost_timer" type="Timer" parent="spawner"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="spawner/ghost_timer" to="spawner" method="_on_ghost_timer_timeout"]

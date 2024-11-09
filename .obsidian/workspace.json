@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "0a469ab34e347d7c",
+    "type": "split",
+    "children": [
+      {
+        "id": "7b3817786044d0da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29732e0d1a95187d",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "obs/canva.canvas",
+                "viewState": {
+                  "x": 1003.6247427129879,
+                  "y": -405.74936456778835,
+                  "zoom": -1.1102230246251565e-16
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "canva"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6dbc1b18e7ce120e",
+    "type": "split",
+    "children": [
+      {
+        "id": "a2672f414a22c286",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20f0f017d9bd0e0e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b74578760c2af8ed",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ebc2f0cfd1de0ce4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "d48d8f8c7e844f69",
+    "type": "split",
+    "children": [
+      {
+        "id": "344a3ebb88a0523b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b6bc29d8eb8306f6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "obs/canva.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for canva"
+            }
+          },
+          {
+            "id": "2ff376cf27d8988e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "obs/canva.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from canva"
+            }
+          },
+          {
+            "id": "46b0d5186f4eca6a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f155e8c41def829e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "obs/canva.canvas"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of canva"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "29732e0d1a95187d",
+  "lastOpenFiles": [
+    "chaser.gd3475933591.tmp",
+    "main_timer.gd3415909771.tmp",
+    "score_system.gd3400555716.tmp",
+    "main_timer.gd3400506722.tmp",
+    "main.tscn3400467068.tmp",
+    "main_timer.gd",
+    "chaser.gd3274927923.tmp",
+    "main.tscn2434066328.tmp",
+    "score_system.gd2314725190.tmp",
+    "score_system.gd2303526328.tmp",
+    "main.tscn2303490087.tmp",
+    "obs/canva.canvas"
+  ]
+}

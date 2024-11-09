@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgyoqda1ainwg"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_ik02d"]
+[ext_resource type="PackedScene" uid="uid://cr8tp40m87gjm" path="res://movment.tscn" id="2_nxs1j"]
+[ext_resource type="Texture2D" uid="uid://bmjh41l5fjs40" path="res://icon.svg" id="2_u1nhd"]
+[ext_resource type="PackedScene" uid="uid://dnmoxpvs3pa6c" path="res://side_scroller_walk.tscn" id="3_j1sic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bu8x8"]
+radius = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp3xn"]
+radius = 72.0
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(-8, -48)
+script = ExtResource("1_ik02d")
+metadata/_edit_group_ = true
+
+[node name="movment" parent="." node_paths=PackedStringArray("host") instance=ExtResource("2_nxs1j")]
+host = NodePath("..")
+
+[node name="side_scroller_walk" parent="movment" node_paths=PackedStringArray("host") instance=ExtResource("3_j1sic")]
+host = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u1nhd")
+
+[node name="phyxcollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bu8x8")
+
+[node name="current_number" type="Label" parent="."]
+visible = false
+offset_left = -16.0
+offset_top = -112.0
+offset_right = 24.0
+offset_bottom = -89.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(20, 11)
+text = "99"
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dp3xn")
