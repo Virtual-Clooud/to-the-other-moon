@@ -37,23 +37,21 @@ func create_health_list_from_target():
 			if HP + number_list[x] == target:
 				if health_list.has(HP) == false:
 					health_list.append(HP)
-					print(HP, " + ", number_list[x], " = ",  HP + number_list[x])
+					
 		## Para combo HP + ([X] + [Y]) == target
 		for x in range(0, 3):
 			for y in range(0, 3):
 				if HP + (number_list[x] + number_list[y]) == target:
 					if health_list.has(HP) == false:
 						health_list.append(HP)
-						print(HP, " + ", number_list[x], " + ", 
-						number_list[y], " = ",  HP + number_list[x] + number_list[y])
+						
 					else:
-						print("COMBO XY INVALID")
+						pass
 					
 		#for y in range(0,3):
 			#if number_list[x] + number_list[y] < 10:
 				#health_list.append(number_list[x] + number_list[y])
-				#print(number_list[x], " + ", 
-				#number_list[y], " = ",  number_list[x] + number_list[y])
+
 	### For Para soma [x] + [y] + [z]:
 	#for x in range(0,3):
 		#for y in range(0,3):
@@ -72,7 +70,6 @@ func _ready() -> void:
 	self.add_child(ighost)
 	number_list = $"../number_list".number_list
 	create_health_list()
-	print(health_list)
 
 func _on_ghost_timer_timeout() -> void:
 	

@@ -21,13 +21,13 @@ func squeak():
 func pop_in_portrait():
 	$Sprite2D.visible = true
 	var pop_up_tween = create_tween()
-	pop_up_tween.tween_property($Sprite2D,"position", Vector2(784,-176), 0.3).set_trans(
+	pop_up_tween.tween_property($Sprite2D,"position", Vector2(728,-24), 0.3).set_trans(
 		Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	pop_up_tween.play()
 
 func pop_out_portrait():
 	var pop_up_tween = create_tween()
-	pop_up_tween.tween_property($Sprite2D,"position", Vector2(784,928), 0.4).set_trans(
+	pop_up_tween.tween_property($Sprite2D,"position", Vector2(728,800), 0.4).set_trans(
 		Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	pop_up_tween.play()
 	pop_up_tween.finished.connect(func(): $Sprite2D.visible = false)

@@ -1,17 +1,19 @@
 extends StaticBody2D
 
-@export var dialogue := ["Porqueeeee?, porque eu fui clicar no anuncío que dizia 'Mulheres solteiras com 30 anos querendo consertar o encanamento'!",
-"Agora hackearam a minha casa e estou trancado do lado de fora!"]
+@export var dialogue := [
+	"O junin falo que c eu baixasse playstation2real.exe eu ia ter o playstation 2 secreto",
+"Fui tapeado!"]
 @export var can_talk := true
 @export var static_signal_node : StaticSignal
 @export var player : Player
 var tween = create_tween()
 signal talk
+signal finished_talking
 ## PlaceHolder pro npc emitir algo quando puder ser interagido
 func activate_interact():
 	tween.kill()
 	tween = create_tween()
-	var random_scale = randf_range(2,2.5)
+	var random_scale = randf_range(0.2,2)
 	tween.tween_property(
 		self, "scale", Vector2(random_scale,random_scale), 
 		0.3).set_trans(
@@ -28,6 +30,7 @@ func want_to_talk(area):
 func cannot_talk():
 	can_talk = false
 	$Area2D/CollisionShape2D.disabled = true
+	emit_signal("finished_talking")
 
 func start_talking():
 	emit_signal("talk")
