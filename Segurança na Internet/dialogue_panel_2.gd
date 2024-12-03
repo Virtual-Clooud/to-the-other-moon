@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name DialoguePanel
 
 var npc
 var dialogue_text
@@ -16,7 +16,6 @@ signal dialogue_changed
 
 ## Sinal de origem SEMPRE passará seus argumentos á função conectada
 func dialogue_start():
-	
 	#self.visible = true
 	pop_up_tween = create_tween()
 	pop_up_tween.tween_property(
@@ -40,6 +39,7 @@ func _ready() -> void:
 	$Panel/RichTextLabel.set_text(host.dialogue[current_dialogue])
 	self.visible = false
 	self.dialogue_started.connect(StaticSignalN.emit_dialogue_started)
+
 	## Precisa ser mudada para acomodar atomicidade
 	host.talk.connect(func() : self.visible = true)
 	host.talk.connect(dialogue_start)
@@ -47,9 +47,7 @@ func _ready() -> void:
 	self.connect("dialogue_ended", on_dialogue_ended)
 
 func _physics_process(_delta: float) -> void:
-	if host.can_talk == false:
-		visible = false
-	if Input.is_action_just_pressed("change_number_up"):
+	if Input.is_action_just_pressed("change_number_up") and visible == true:
 		current_dialogue += 1
 		if current_dialogue > host.dialogue.size() - 1:
 			emit_signal("dialogue_changed")

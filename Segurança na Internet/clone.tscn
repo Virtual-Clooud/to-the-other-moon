@@ -1,0 +1,216 @@
+[gd_scene load_steps=13 format=3 uid="uid://dswvp3upop78n"]
+
+[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_84fbe"]
+[ext_resource type="Script" path="res://Segurança na Internet/clone_1.gd" id="2_84k3c"]
+[ext_resource type="Texture2D" uid="uid://ya6xmcws3aqa" path="res://Segurança na Internet/clones.png" id="3_uc88r"]
+[ext_resource type="Script" path="res://Segurança na Internet/dialogue_panel.gd" id="4_4c1pg"]
+[ext_resource type="Script" path="res://Segurança na Internet/dialogue_portrait.gd" id="5_8jmtb"]
+[ext_resource type="PackedScene" uid="uid://xwkv0w0ml3ej" path="res://static_signal.tscn" id="6_xcksq"]
+[ext_resource type="Script" path="res://Segurança na Internet/clone_2.gd" id="7_84k3c"]
+[ext_resource type="Script" path="res://Segurança na Internet/dialogue_panel_2.gd" id="8_uc88r"]
+[ext_resource type="Script" path="res://Segurança na Internet/gg.gd" id="9_8jmtb"]
+[ext_resource type="Texture2D" uid="uid://4gter675vh40" path="res://Segurança na Internet/gg.png" id="10_xcksq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwe2c"]
+size = Vector2(122, 130)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4be0s"]
+radius = 234.019
+
+[node name="Clone" type="Node2D"]
+
+[node name="StaticSignal" parent="." instance=ExtResource("6_xcksq")]
+
+[node name="player" parent="." instance=ExtResource("1_84fbe")]
+position = Vector2(-928, -8)
+
+[node name="clone1" type="StaticBody2D" parent="." node_paths=PackedStringArray("static_signal_node", "player")]
+script = ExtResource("2_84k3c")
+static_signal_node = NodePath("../StaticSignal")
+player = NodePath("../player")
+metadata/_edit_group_ = true
+
+[node name="dialogue_portrait" type="Node2D" parent="clone1" node_paths=PackedStringArray("dialogue_panel")]
+position = Vector2(-1408, 0)
+script = ExtResource("5_8jmtb")
+dialogue_panel = NodePath("../dialogue_panel")
+
+[node name="Sprite2D" type="Sprite2D" parent="clone1/dialogue_portrait"]
+position = Vector2(744, 800)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_uc88r")
+
+[node name="dialogue_panel" type="Node2D" parent="clone1" node_paths=PackedStringArray("StaticSignalN", "host")]
+position = Vector2(-1104, -8)
+script = ExtResource("4_4c1pg")
+StaticSignalN = NodePath("../../StaticSignal")
+host = NodePath("..")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="clone1/dialogue_panel"]
+anchors_preset = -1
+anchor_top = 18.0
+anchor_bottom = 18.0
+offset_left = 88.0
+offset_top = 232.0
+offset_right = 988.0
+offset_bottom = 412.0
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="clone1/dialogue_panel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -60.0
+offset_right = 400.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "msçdafjçafnosçanfdçonafodnsafnlmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonçasfdnlasçfnlçasdmfaçjfçhnçlon"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="clone1/dialogue_panel/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -45.0
+offset_right = -37.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "pressione --SHIFT-- para continuar"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clone1"]
+position = Vector2(-320, 0)
+shape = SubResource("RectangleShape2D_cwe2c")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="clone1/CollisionShape2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_uc88r")
+
+[node name="Area2D" type="Area2D" parent="clone1" groups=["interact"]]
+position = Vector2(-424, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clone1/Area2D"]
+shape = SubResource("CircleShape2D_4be0s")
+
+[node name="clone2" type="StaticBody2D" parent="." node_paths=PackedStringArray("static_signal_node", "player")]
+script = ExtResource("7_84k3c")
+static_signal_node = NodePath("../StaticSignal")
+player = NodePath("../player")
+metadata/_edit_group_ = true
+
+[node name="dialogue_portrait2" type="Node2D" parent="clone2" node_paths=PackedStringArray("dialogue_panel")]
+script = ExtResource("5_8jmtb")
+dialogue_panel = NodePath("../dialogue_panel2")
+
+[node name="Sprite2D" type="Sprite2D" parent="clone2/dialogue_portrait2"]
+position = Vector2(744, -24)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_uc88r")
+flip_h = true
+
+[node name="dialogue_panel2" type="Node2D" parent="clone2" node_paths=PackedStringArray("StaticSignalN", "host")]
+position = Vector2(-336, 0)
+script = ExtResource("8_uc88r")
+StaticSignalN = NodePath("../../StaticSignal")
+host = NodePath("..")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="clone2/dialogue_panel2"]
+anchors_preset = -1
+anchor_top = 18.0
+anchor_bottom = 18.0
+offset_left = 88.0
+offset_top = 232.0
+offset_right = 988.0
+offset_bottom = 412.0
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="clone2/dialogue_panel2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -60.0
+offset_right = 400.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "msçdafjçafnosçanfdçonafodnsafnlmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonçasfdnlasçfnlçasdmfaçjfçhnçlon"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="clone2/dialogue_panel2/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -45.0
+offset_right = -37.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "pressione --SHIFT-- para continuar"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clone2"]
+position = Vector2(-32, 0)
+shape = SubResource("RectangleShape2D_cwe2c")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="clone2/CollisionShape2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_uc88r")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="clone2" groups=["interact"]]
+position = Vector2(48, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clone2/Area2D"]
+shape = SubResource("CircleShape2D_4be0s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="GG" type="Node2D" parent="."]
+script = ExtResource("9_8jmtb")
+
+[node name="Sprite2D" type="Sprite2D" parent="GG"]
+position = Vector2(4, 1056)
+texture = ExtResource("10_xcksq")
+
+[node name="Label" type="Label" parent="GG"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = 752.0
+offset_right = 110.0
+offset_bottom = 775.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(90, 12)
+text = "Parabéns! Jogo Completo
+"
+
+[connection signal="finished_talking" from="clone2" to="GG" method="_on_clone_2_finished_talking"]
+[connection signal="area_entered" from="clone2/Area2D" to="clone2" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="clone2/Area2D" to="clone2" method="_on_area_2d_area_exited"]

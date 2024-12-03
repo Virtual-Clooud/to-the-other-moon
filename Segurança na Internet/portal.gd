@@ -5,7 +5,6 @@ var can_change := false
 @export var node : StaticBody2D
 
 func pop_up():
-	print("KOKO")
 	self.visible = true
 	can_change = true
 
@@ -14,11 +13,7 @@ func change_level(next_level):
 
 func _ready() -> void:
 	self.visible = false
-	print(node)
-	if node == null:
-		node = $"../kid"
-		print("kkk")
-		node.finished_talking.connect(pop_up)
+	node.finished_talking.connect(pop_up)
 
 func _physics_process(_delta: float) -> void:
 	self.rotation += 0.005
