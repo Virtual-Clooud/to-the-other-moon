@@ -1,5 +1,5 @@
 extends Node2D
-class_name DialoguePanel
+
 
 var npc
 var dialogue_text
@@ -16,9 +16,11 @@ signal dialogue_changed
 
 ## Sinal de origem SEMPRE passará seus argumentos á função conectada
 func dialogue_start():
-	self.visible = true
+	
+	#self.visible = true
 	pop_up_tween = create_tween()
-	pop_up_tween.tween_property($Panel,"position", Vector2(0,-16), 0.4).set_trans(
+	pop_up_tween.tween_property(
+		$Panel,"position", Vector2(88,232), 0.7).set_trans(
 		Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	pop_up_tween.play()
 	pop_up_tween.finished.connect(emit_signal.bind("dialogue_started"))
@@ -27,7 +29,7 @@ func dialogue_start():
 
 func on_dialogue_ended():
 	pop_up_tween = create_tween()
-	pop_up_tween.tween_property($Panel,"position", Vector2(0,720), 0.3).set_trans(
+	pop_up_tween.tween_property($Panel,"position", Vector2(80,568), 0.3).set_trans(
 		Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	pop_up_tween.play()
 	pop_up_tween.finished.connect(func(): self.visible = false)
@@ -38,12 +40,15 @@ func _ready() -> void:
 	$Panel/RichTextLabel.set_text(host.dialogue[current_dialogue])
 	self.visible = false
 	self.dialogue_started.connect(StaticSignalN.emit_dialogue_started)
-	self.dialogue_ended.connect(StaticSignalN.emit_dialogue_ended)
 	## Precisa ser mudada para acomodar atomicidade
+	host.talk.connect(func() : self.visible = true)
 	host.talk.connect(dialogue_start)
+	
 	self.connect("dialogue_ended", on_dialogue_ended)
 
 func _physics_process(_delta: float) -> void:
+	if host.can_talk == false:
+		visible = false
 	if Input.is_action_just_pressed("change_number_up"):
 		current_dialogue += 1
 		if current_dialogue > host.dialogue.size() - 1:

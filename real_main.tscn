@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd1bcf6mhxkdg"]
+
+[ext_resource type="PackedScene" uid="uid://biv0wjwc0wuoe" path="res://Segurança na Internet/dialogue_test.tscn" id="1_5c7hq"]
+
+[node name="Node" type="Node"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_5c7hq")]

@@ -13,36 +13,40 @@ var final_velocity := Vector2.ZERO
 var previous_input := Vector2.ZERO
 signal started
 signal ended
-signal change_tween
+var tween = create_tween()
 
-
-func ramp_up(_node):
-	
-	var tween = create_tween()
-	tween.tween_property(self, "velocity", input*speed, 0.5).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+func ramp_up():
+	tween.kill()
+	tween = create_tween()
+	tween.tween_property(
+		self, "velocity", input*speed, 0.01).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	tween.play()
 
-func fall_off(_node):
-	var tween = create_tween()
-	tween.tween_property(self, "velocity", Vector2.ZERO, 0.2)
+func fall_off():
+	tween.kill()
+	tween = create_tween()
+	tween.tween_property(
+		self, "velocity", Vector2.ZERO,0.4).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	tween.play()
 
 func _ready():
 	host = $"..".host
-	started.connect(ramp_up)
-	ended.connect(fall_off)
-	change_tween.connect(ramp_up)
+	#started.connect(ramp_up)
+	#ended.connect(fall_off)
 func _physics_process(_delta: float) -> void:
-	print(velocity)
 	input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	# Verifica se o input mudou
-	input.y = 0
 	if input != previous_input:
-		ramp_up(self)
+		if input == Vector2.ZERO:
+			fall_off()
+		else:
+			ramp_up()
 		previous_input = input  # Atualiza o valor anterior
+	
 	if input != Vector2.ZERO and active == false:
 		emit_signal("started", self)
 		active = true
+	
 	elif input == Vector2.ZERO and active and velocity == Vector2.ZERO:
 		emit_signal("ended", self)
 		active = false

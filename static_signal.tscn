@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xwkv0w0ml3ej"]
+
+[ext_resource type="Script" path="res://Segurança na Internet/static_signal.gd" id="1_qx8ot"]
+
+[node name="StaticSignal" type="Node"]
+script = ExtResource("1_qx8ot")

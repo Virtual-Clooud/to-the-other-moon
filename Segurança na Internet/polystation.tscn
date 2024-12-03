@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://8ljv20srgjv6"]
+
+[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_d4sxf"]
+[ext_resource type="PackedScene" uid="uid://dt6ut4cwwxnv" path="res://portal.tscn" id="2_kgmq6"]
+[ext_resource type="Texture2D" uid="uid://dc41navufxcpp" path="res://Segurança na Internet/kid.png" id="3_itr8y"]
+[ext_resource type="Script" path="res://Segurança na Internet/kid.gd" id="3_rsy1b"]
+[ext_resource type="Script" path="res://Segurança na Internet/dialogue_panel.gd" id="4_y8w72"]
+[ext_resource type="Script" path="res://Segurança na Internet/dialogue_portrait.gd" id="5_2bqjq"]
+[ext_resource type="Texture2D" uid="uid://busf8g5lvomn0" path="res://Segurança na Internet/polystation.png" id="5_y8w72"]
+[ext_resource type="PackedScene" uid="uid://xwkv0w0ml3ej" path="res://static_signal.tscn" id="8_2bqjq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25p33"]
+size = Vector2(122, 130)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_guobt"]
+radius = 234.019
+
+[node name="Polystation" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-656, -64)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_y8w72")
+
+[node name="player" parent="." instance=ExtResource("1_d4sxf")]
+position = Vector2(0, 496)
+
+[node name="portal" parent="." node_paths=PackedStringArray("node") instance=ExtResource("2_kgmq6")]
+position = Vector2(1016, 0)
+next_level = "res://Segurança na Internet/clone.tscn"
+node = NodePath("../kid")
+
+[node name="kid" type="StaticBody2D" parent="."]
+position = Vector2(-592, 32)
+script = ExtResource("3_rsy1b")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kid"]
+shape = SubResource("RectangleShape2D_25p33")
+
+[node name="Sprite2D" type="Sprite2D" parent="kid/CollisionShape2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_itr8y")
+
+[node name="Area2D" type="Area2D" parent="kid" groups=["interact"]]
+position = Vector2(144, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kid/Area2D"]
+shape = SubResource("CircleShape2D_guobt")
+
+[node name="dialogue_panel" type="Node2D" parent="kid" node_paths=PackedStringArray("StaticSignalN", "host")]
+position = Vector2(-536, -8)
+script = ExtResource("4_y8w72")
+StaticSignalN = NodePath("../../StaticSignal")
+host = NodePath("..")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="kid/dialogue_panel"]
+anchors_preset = -1
+anchor_top = 18.0
+anchor_bottom = 18.0
+offset_left = 88.0
+offset_top = 232.0
+offset_right = 988.0
+offset_bottom = 412.0
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="kid/dialogue_panel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -60.0
+offset_right = 400.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "msçdafjçafnosçanfdçonafodnsafnlmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonmsçdafjçafnosçanfdçonafodnsafnlçasfdnlasçfnlçasdmfaçjfçhnçlonçasfdnlasçfnlçasdmfaçjfçhnçlon"
+
+[node name="Label" type="Label" parent="kid/dialogue_panel/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -45.0
+offset_right = -37.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "pressione --SHIFT-- para continuar"
+
+[node name="dialogue_portrait" type="Node2D" parent="kid" node_paths=PackedStringArray("dialogue_panel")]
+position = Vector2(-736, 0)
+script = ExtResource("5_2bqjq")
+dialogue_panel = NodePath("../dialogue_panel")
+
+[node name="Sprite2D" type="Sprite2D" parent="kid/dialogue_portrait"]
+position = Vector2(744, 800)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_itr8y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="StaticSignal" parent="." instance=ExtResource("8_2bqjq")]
+
+[connection signal="finished_talking" from="kid" to="portal" method="_on_kid_finished_talking"]

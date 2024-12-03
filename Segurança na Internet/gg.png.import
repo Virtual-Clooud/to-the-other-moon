@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpghmcui6b5un"
-path="res://.godot/imported/crying.png-67966fadb12d83600091f5252f7038cd.ctex"
+uid="uid://4gter675vh40"
+path="res://.godot/imported/gg.png-3864e8011d54bed55510211a0b66e0b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crying.png"
-dest_files=["res://.godot/imported/crying.png-67966fadb12d83600091f5252f7038cd.ctex"]
+source_file="res://Segurança na Internet/gg.png"
+dest_files=["res://.godot/imported/gg.png-3864e8011d54bed55510211a0b66e0b6.ctex"]
 
 [params]
 

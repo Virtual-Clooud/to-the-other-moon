@@ -18,5 +18,4 @@ func _ready() -> void:
 		self.get_child(x).ended.connect(func(node) : varray.erase(node))
 
 func _physics_process(_delta: float) -> void:
-	print(varray)
 	pass

@@ -46,4 +46,3 @@ func _ready() -> void:
 	
 	sort_numbers("asc")
 	current_number = number_list[0]
-	print(number_list)
