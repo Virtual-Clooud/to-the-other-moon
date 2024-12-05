@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://cbqn1f8r1s6d4" path="res://Segurança na Internet/house 01c.png" id="1_sbhmr"]
 [ext_resource type="Texture2D" uid="uid://c7xf1p4jmddd7" path="res://Segurança na Internet/jackthekiller.png" id="2_bfnv6"]
-[ext_resource type="Script" path="res://Segurança na Internet/jeffthekilla.gd" id="3_rx4bt"]
-[ext_resource type="PackedScene" uid="uid://xwkv0w0ml3ej" path="res://static_signal.tscn" id="5_bfnv6"]
+[ext_resource type="Script" uid="uid://dll1be6v5rtvp" path="res://Segurança na Internet/jeffthekilla.gd" id="3_rx4bt"]
+[ext_resource type="PackedScene" path="res://static_signal.tscn" id="5_bfnv6"]
 [ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="5_x6j1s"]
 [ext_resource type="PackedScene" uid="uid://rl6jmcas6mjc" path="res://number_list.tscn" id="6_si0md"]
-[ext_resource type="Script" path="res://Segurança na Internet/test.gd" id="7_ifmml"]
+[ext_resource type="Script" uid="uid://dibslnaf1dcep" path="res://Segurança na Internet/test.gd" id="7_ifmml"]
 [ext_resource type="Texture2D" uid="uid://cpghmcui6b5un" path="res://Segurança na Internet/crying.png" id="8_54gub"]
-[ext_resource type="Script" path="res://Segurança na Internet/dialogue_panel.gd" id="9_xqqws"]
-[ext_resource type="Script" path="res://Segurança na Internet/dialogue_portrait.gd" id="10_1y4wa"]
-[ext_resource type="PackedScene" uid="uid://dt6ut4cwwxnv" path="res://portal.tscn" id="11_bfnv6"]
+[ext_resource type="Script" uid="uid://bn0406wudq478" path="res://Segurança na Internet/dialogue_panel.gd" id="9_xqqws"]
+[ext_resource type="Script" uid="uid://cjqjutsdqqm8t" path="res://Segurança na Internet/dialogue_portrait.gd" id="10_1y4wa"]
+[ext_resource type="PackedScene" path="res://portal.tscn" id="11_bfnv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7je3c"]
 radius = 234.019
@@ -22,10 +22,12 @@ size = Vector2(122, 130)
 
 [node name="portal" parent="." node_paths=PackedStringArray("node") instance=ExtResource("11_bfnv6")]
 position = Vector2(0, 496)
-next_level = "res://Segurança na Internet/polystation.tscn"
+next_level = "res://Segurança na Internet/city.tscn"
 node = NodePath("../test")
+metadata/_edit_lock_ = true
 
 [node name="house" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="house"]
 position = Vector2(672, -224)
@@ -53,9 +55,11 @@ static_signal_node = NodePath("../../StaticSignal")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+metadata/_edit_lock_ = true
 
 [node name="player" parent="." instance=ExtResource("5_x6j1s")]
 position = Vector2(-968, 32)
+metadata/_edit_lock_ = true
 
 [node name="number_list" parent="." instance=ExtResource("6_si0md")]
 

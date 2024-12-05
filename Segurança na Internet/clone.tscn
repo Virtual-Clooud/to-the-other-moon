@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dswvp3upop78n"]
+[gd_scene load_steps=14 format=3 uid="uid://dswvp3upop78n"]
 
 [ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_84fbe"]
-[ext_resource type="Script" path="res://Segurança na Internet/clone_1.gd" id="2_84k3c"]
+[ext_resource type="Script" uid="uid://bylcyh56fey2d" path="res://Segurança na Internet/clone_1.gd" id="2_84k3c"]
 [ext_resource type="Texture2D" uid="uid://ya6xmcws3aqa" path="res://Segurança na Internet/clones.png" id="3_uc88r"]
-[ext_resource type="Script" path="res://Segurança na Internet/dialogue_panel.gd" id="4_4c1pg"]
-[ext_resource type="Script" path="res://Segurança na Internet/dialogue_portrait.gd" id="5_8jmtb"]
-[ext_resource type="PackedScene" uid="uid://xwkv0w0ml3ej" path="res://static_signal.tscn" id="6_xcksq"]
-[ext_resource type="Script" path="res://Segurança na Internet/clone_2.gd" id="7_84k3c"]
-[ext_resource type="Script" path="res://Segurança na Internet/dialogue_panel_2.gd" id="8_uc88r"]
-[ext_resource type="Script" path="res://Segurança na Internet/gg.gd" id="9_8jmtb"]
+[ext_resource type="Script" uid="uid://bn0406wudq478" path="res://Segurança na Internet/dialogue_panel.gd" id="4_4c1pg"]
+[ext_resource type="Script" uid="uid://cjqjutsdqqm8t" path="res://Segurança na Internet/dialogue_portrait.gd" id="5_8jmtb"]
+[ext_resource type="PackedScene" path="res://static_signal.tscn" id="6_xcksq"]
+[ext_resource type="Script" uid="uid://chhmq0ommmn1p" path="res://Segurança na Internet/clone_2.gd" id="7_84k3c"]
+[ext_resource type="Script" uid="uid://ccs2iykp7xo4" path="res://Segurança na Internet/dialogue_panel_2.gd" id="8_uc88r"]
+[ext_resource type="Script" uid="uid://dsxs43vs1bmm3" path="res://Segurança na Internet/gg.gd" id="9_8jmtb"]
 [ext_resource type="Texture2D" uid="uid://4gter675vh40" path="res://Segurança na Internet/gg.png" id="10_xcksq"]
+[ext_resource type="PackedScene" path="res://portal.tscn" id="11_xcksq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwe2c"]
 size = Vector2(122, 130)
@@ -210,6 +211,9 @@ scale = Vector2(3, 3)
 pivot_offset = Vector2(90, 12)
 text = "Parabéns! Jogo Completo
 "
+
+[node name="portal" parent="." instance=ExtResource("11_xcksq")]
+position = Vector2(-192, 456)
 
 [connection signal="finished_talking" from="clone2" to="GG" method="_on_clone_2_finished_talking"]
 [connection signal="area_entered" from="clone2/Area2D" to="clone2" method="_on_area_2d_area_entered"]

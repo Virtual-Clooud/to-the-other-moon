@@ -33,5 +33,5 @@ func pop_out_portrait():
 		Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	pop_up_tween.play()
 	pop_up_tween.finished.connect(func(): $Sprite2D.visible = false)
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	$Sprite2D.visible = dialogue_panel.visible

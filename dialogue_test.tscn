@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdum26msdo4kp"]
+
+[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_hk8ni"]
+[ext_resource type="PackedScene" uid="uid://rl6jmcas6mjc" path="res://number_list.tscn" id="2_acqeb"]
+[ext_resource type="Script" uid="uid://biwnuae0k7o0p" path="res://test.gd" id="3_5vnxd"]
+[ext_resource type="Script" uid="uid://bn0406wudq478" path="res://Segurança na Internet/dialogue_panel.gd" id="4_k04wx"]
+[ext_resource type="Texture2D" uid="uid://cpghmcui6b5un" path="res://Segurança na Internet/crying.png" id="5_tdx50"]
+[ext_resource type="Script" uid="uid://cjqjutsdqqm8t" path="res://Segurança na Internet/dialogue_portrait.gd" id="6_8g368"]
+[ext_resource type="Script" uid="uid://ctauh7cf75gvc" path="res://Segurança na Internet/static_signal.gd" id="6_it6p4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7je3c"]
+radius = 500.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_883h5"]
+size = Vector2(122, 130)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticSignal" type="Node" parent="."]
+script = ExtResource("6_it6p4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="player" parent="." node_paths=PackedStringArray("static_signal_node") instance=ExtResource("1_hk8ni")]
+position = Vector2(-152, 16)
+static_signal_node = NodePath("../StaticSignal")
+
+[node name="number_list" parent="." instance=ExtResource("2_acqeb")]
+
+[node name="test" type="StaticBody2D" parent="."]
+position = Vector2(696, 0)
+script = ExtResource("3_5vnxd")
+
+[node name="Area2D" type="Area2D" parent="test"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test/Area2D"]
+shape = SubResource("CircleShape2D_7je3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_883h5")
+
+[node name="Sprite2D" type="Sprite2D" parent="test/CollisionShape2D"]
+position = Vector2(1.39998, 3.8147e-06)
+scale = Vector2(0.204575, 0.32)
+texture = ExtResource("5_tdx50")
+
+[node name="dialogue_panel" type="Node2D" parent="test" node_paths=PackedStringArray("StaticSignalN", "host")]
+position = Vector2(-696, 0)
+script = ExtResource("4_k04wx")
+StaticSignalN = NodePath("../../StaticSignal")
+host = NodePath("..")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="test/dialogue_panel"]
+anchors_preset = -1
+anchor_top = 18.0
+anchor_bottom = 18.0
+offset_right = 900.0
+offset_bottom = 400.0
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="test/dialogue_panel/Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 850.0
+offset_bottom = 350.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="test/dialogue_panel/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -89.3333
+offset_top = -64.0
+offset_right = -49.3333
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "pressione --SHIFT-- para continuar"
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogue_portrait" type="Node2D" parent="test" node_paths=PackedStringArray("dialogue_panel")]
+position = Vector2(-696, 0)
+script = ExtResource("6_8g368")
+dialogue_panel = NodePath("../dialogue_panel")
+
+[node name="Sprite2D" type="Sprite2D" parent="test/dialogue_portrait"]
+position = Vector2(784, 976)
+texture = ExtResource("5_tdx50")

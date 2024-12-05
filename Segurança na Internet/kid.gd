@@ -45,4 +45,4 @@ func _ready():
 		player.wanna_talk.connect(start_talking)
 		$Area2D.area_entered.connect(want_to_talk)
 		$dialogue_panel.dialogue_ended.connect(cannot_talk)
-	
+	finished_talking.connect($"../portal".pop_up())

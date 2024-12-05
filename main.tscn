@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_5prrw"]
 [ext_resource type="PackedScene" uid="uid://rl6jmcas6mjc" path="res://number_list.tscn" id="3_7lp4n"]
-[ext_resource type="Script" path="res://score_system.gd" id="4_eylt8"]
-[ext_resource type="Script" path="res://main_timer.gd" id="5_umo41"]
-[ext_resource type="Script" path="res://spawner.gd" id="6_0pew6"]
+[ext_resource type="Script" uid="uid://bn86y2iyi03hk" path="res://score_system.gd" id="4_eylt8"]
+[ext_resource type="Script" uid="uid://drokdhcbisygb" path="res://main_timer.gd" id="5_umo41"]
+[ext_resource type="Script" uid="uid://bn04gwiiil0xh" path="res://spawner.gd" id="6_0pew6"]
 
 [node name="main" type="Node2D"]
 
