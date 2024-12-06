@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt6ut4cwwxnv"]
+[gd_scene load_steps=4 format=3 uid="uid://dp6rp7loyyuir"]
 
-[ext_resource type="Script" path="res://Segurança na Internet/portal.gd" id="1_ef3v5"]
+[ext_resource type="Script" uid="uid://msmys1nu1gca" path="res://Segurança na Internet/portal.gd" id="1_ef3v5"]
 [ext_resource type="Texture2D" uid="uid://cqcp3wxwqisup" path="res://Segurança na Internet/portal.png" id="2_grrij"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otov6"]

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cpghmcui6b5un" path="res://Segurança na Internet/crying.png" id="8_54gub"]
 [ext_resource type="Script" uid="uid://bn0406wudq478" path="res://Segurança na Internet/dialogue_panel.gd" id="9_xqqws"]
 [ext_resource type="Script" uid="uid://cjqjutsdqqm8t" path="res://Segurança na Internet/dialogue_portrait.gd" id="10_1y4wa"]
-[ext_resource type="PackedScene" path="res://portal.tscn" id="11_bfnv6"]
+[ext_resource type="PackedScene" uid="uid://dp6rp7loyyuir" path="res://portal.tscn" id="11_bfnv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7je3c"]
 radius = 234.019

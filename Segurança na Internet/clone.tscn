@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://ccs2iykp7xo4" path="res://Segurança na Internet/dialogue_panel_2.gd" id="8_uc88r"]
 [ext_resource type="Script" uid="uid://dsxs43vs1bmm3" path="res://Segurança na Internet/gg.gd" id="9_8jmtb"]
 [ext_resource type="Texture2D" uid="uid://4gter675vh40" path="res://Segurança na Internet/gg.png" id="10_xcksq"]
-[ext_resource type="PackedScene" path="res://portal.tscn" id="11_xcksq"]
+[ext_resource type="PackedScene" uid="uid://dp6rp7loyyuir" path="res://portal.tscn" id="11_xcksq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwe2c"]
 size = Vector2(122, 130)
@@ -30,6 +30,7 @@ script = ExtResource("2_84k3c")
 static_signal_node = NodePath("../StaticSignal")
 player = NodePath("../player")
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="dialogue_portrait" type="Node2D" parent="clone1" node_paths=PackedStringArray("dialogue_panel")]
 position = Vector2(-1408, 0)
@@ -111,6 +112,7 @@ script = ExtResource("7_84k3c")
 static_signal_node = NodePath("../StaticSignal")
 player = NodePath("../player")
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="dialogue_portrait2" type="Node2D" parent="clone2" node_paths=PackedStringArray("dialogue_panel")]
 script = ExtResource("5_8jmtb")
@@ -193,6 +195,7 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="GG" type="Node2D" parent="."]
 script = ExtResource("9_8jmtb")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="GG"]
 position = Vector2(4, 1056)
@@ -214,6 +217,7 @@ text = "Parabéns! Jogo Completo
 
 [node name="portal" parent="." instance=ExtResource("11_xcksq")]
 position = Vector2(-192, 456)
+next_level = "res://Segurança na Internet/city.tscn"
 
 [connection signal="finished_talking" from="clone2" to="GG" method="_on_clone_2_finished_talking"]
 [connection signal="area_entered" from="clone2/Area2D" to="clone2" method="_on_area_2d_area_entered"]

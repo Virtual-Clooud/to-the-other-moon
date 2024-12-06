@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://8ljv20srgjv6"]
 
 [ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_d4sxf"]
-[ext_resource type="PackedScene" path="res://portal.tscn" id="2_kgmq6"]
+[ext_resource type="PackedScene" uid="uid://dp6rp7loyyuir" path="res://portal.tscn" id="2_kgmq6"]
 [ext_resource type="Texture2D" uid="uid://dc41navufxcpp" path="res://Segurança na Internet/kid.png" id="3_itr8y"]
 [ext_resource type="Script" uid="uid://bh0wmv4i7wbup" path="res://Segurança na Internet/kid.gd" id="3_rsy1b"]
 [ext_resource type="Script" uid="uid://bn0406wudq478" path="res://Segurança na Internet/dialogue_panel.gd" id="4_y8w72"]
