@@ -6,6 +6,7 @@ extends StaticBody2D
 @export var can_talk := true
 @export var static_signal_node : StaticSignal
 @export var player : Player
+@export var portal : Node2D
 var tween = create_tween()
 signal talk
 signal finished_talking
@@ -41,8 +42,9 @@ func _ready():
 		player.wanna_talk.connect(start_talking)
 		$Area2D.area_entered.connect(want_to_talk)
 		$dialogue_panel.dialogue_ended.connect(cannot_talk)
+		finished_talking.connect(portal.pop_up)
 	else:
 		player.wanna_talk.connect(start_talking)
 		$Area2D.area_entered.connect(want_to_talk)
 		$dialogue_panel.dialogue_ended.connect(cannot_talk)
-	finished_talking.connect($"../portal".pop_up())
+		finished_talking.connect(portal.pop_up)

@@ -25,9 +25,10 @@ texture = ExtResource("5_y8w72")
 [node name="player" parent="." instance=ExtResource("1_d4sxf")]
 position = Vector2(0, 496)
 
-[node name="kid" type="StaticBody2D" parent="."]
+[node name="kid" type="StaticBody2D" parent="." node_paths=PackedStringArray("portal")]
 position = Vector2(-592, 32)
 script = ExtResource("3_rsy1b")
+portal = NodePath("../portal")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kid"]

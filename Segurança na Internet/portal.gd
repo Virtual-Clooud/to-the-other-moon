@@ -20,3 +20,9 @@ func _physics_process(_delta: float) -> void:
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	if can_change:
 		change_level()
+		if $"..".name == "Clone": 
+			$"../player".visited_clone = true
+		elif $"..".name == "Polystation": 
+			$"../player".visited_poly = true
+		else:
+			$"../player".visited_nooo = true

@@ -1,5 +1,8 @@
 extends CharacterBody2D # ==  import NododePersonagem2D
 class_name Player
+static var visited_clone := false
+static var visited_poly := false
+static var visited_nooo := false
 
 @export var is_talking := false
 @export var can_talk := false

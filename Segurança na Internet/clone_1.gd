@@ -50,4 +50,4 @@ func _ready():
 		$dialogue_panel.dialogue_ended.connect(cannot_talk)
 	
 func _physics_process(_delta: float) -> void:
-	print(self, can_talk)
+	pass

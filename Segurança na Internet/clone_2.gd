@@ -58,4 +58,4 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 	player_near = false
 
 func _physics_process(_delta: float) -> void:
-	print(self, can_talk)
+	pass
