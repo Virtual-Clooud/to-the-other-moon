@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bdum26msdo4kp"]
 
-[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_hk8ni"]
-[ext_resource type="PackedScene" uid="uid://rl6jmcas6mjc" path="res://number_list.tscn" id="2_acqeb"]
-[ext_resource type="Script" uid="uid://biwnuae0k7o0p" path="res://test.gd" id="3_5vnxd"]
+[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player/player.tscn" id="1_hk8ni"]
+[ext_resource type="PackedScene" uid="uid://rl6jmcas6mjc" path="res://player/number_list.tscn" id="2_acqeb"]
+[ext_resource type="Script" uid="uid://biwnuae0k7o0p" path="res://player/test.gd" id="3_5vnxd"]
 [ext_resource type="Script" uid="uid://bn0406wudq478" path="res://Segurança na Internet/dialogue_panel.gd" id="4_k04wx"]
 [ext_resource type="Texture2D" uid="uid://cpghmcui6b5un" path="res://Segurança na Internet/crying.png" id="5_tdx50"]
 [ext_resource type="Script" uid="uid://cjqjutsdqqm8t" path="res://Segurança na Internet/dialogue_portrait.gd" id="6_8g368"]

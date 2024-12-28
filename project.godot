@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="To the other moon"
-config/tags=PackedStringArray("ativo")
 run/main_scene="res://real_main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://player/icon.svg"
 
 [file_customization]
 
 folder_colors={
-"res://Segurança na Internet/": "gray"
+"res://Segurança na Internet/": "gray",
+"res://plugnplay/": "yellow"
 }
 
 [global_group]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://gqs5jg2v0fin"]
 
-[ext_resource type="Script" path="res://chaser.gd" id="1_0t6xk"]
-[ext_resource type="Texture2D" uid="uid://d4m07pirpag3t" path="res://skull.png" id="2_tiyd8"]
+[ext_resource type="Script" uid="uid://cspf6h22quu8p" path="res://chaser.gd" id="1_0t6xk"]
+[ext_resource type="Texture2D" uid="uid://d4m07pirpag3t" path="res://player/skull.png" id="2_tiyd8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8n5el"]
 radius = 64.195

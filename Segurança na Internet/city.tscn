@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c88hf38insim4"]
 
 [ext_resource type="Script" uid="uid://qpgi7mu354k8" path="res://Segurança na Internet/city.gd" id="1_4y0o4"]
-[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player.tscn" id="1_fobop"]
+[ext_resource type="PackedScene" uid="uid://bgyoqda1ainwg" path="res://player/player.tscn" id="1_fobop"]
 [ext_resource type="Texture2D" uid="uid://bwc7qn3d6kkne" path="res://Segurança na Internet/NOOOOOhouse.png" id="2_mditc"]
 [ext_resource type="PackedScene" uid="uid://dp6rp7loyyuir" path="res://portal.tscn" id="2_s30i7"]
 [ext_resource type="Texture2D" uid="uid://blan8rf4ybxwh" path="res://Segurança na Internet/kidHouse.png" id="2_u36kc"]

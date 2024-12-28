@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnmoxpvs3pa6c"]
+
+[ext_resource type="Script" uid="uid://ddxse0d86kfr2" path="res://plugnplay/8_side_walk.gd" id="1_ne6h8"]
+
+[node name="8_side_walk" type="Node"]
+script = ExtResource("1_ne6h8")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bgyoqda1ainwg"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_ik02d"]
-[ext_resource type="PackedScene" uid="uid://cr8tp40m87gjm" path="res://movment.tscn" id="2_nxs1j"]
-[ext_resource type="PackedScene" uid="uid://dnmoxpvs3pa6c" path="res://side_scroller_walk.tscn" id="3_j1sic"]
-[ext_resource type="Texture2D" uid="uid://m7got42lyfmc" path="res://player.png" id="4_hqtel"]
+[ext_resource type="Script" uid="uid://c8dnxitojuc3u" path="res://player/player.gd" id="1_ik02d"]
+[ext_resource type="PackedScene" uid="uid://cr8tp40m87gjm" path="res://plugnplay/movment.tscn" id="2_nxs1j"]
+[ext_resource type="PackedScene" uid="uid://dnmoxpvs3pa6c" path="res://plugnplay/8_side_walk.tscn" id="3_j1sic"]
+[ext_resource type="Texture2D" uid="uid://m7got42lyfmc" path="res://player/player.png" id="4_hqtel"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu8x8"]
 radius = 64.0
@@ -61,6 +61,10 @@ host = NodePath("..")
 [node name="side_scroller_walk" parent="movment" node_paths=PackedStringArray("host") instance=ExtResource("3_j1sic")]
 speed = 450
 host = NodePath("../..")
+rTRANS = 10
+rEase = 1
+fTRANS = 9
+fEase = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)

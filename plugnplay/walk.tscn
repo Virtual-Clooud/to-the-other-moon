@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://depf3td5ymcyh"]
+
+[ext_resource type="Script" uid="uid://cajd6tl20r283" path="res://plugnplay/walk.gd" id="1_wm2fa"]
+
+[node name="walk" type="Node"]
+script = ExtResource("1_wm2fa")
